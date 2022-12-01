@@ -120,15 +120,16 @@ public class Game extends JPanel implements Runnable{
 			startGame = false; 
 			return;
 		}
+		
+		selectCard();
+		
+		if(mouseH.buttonUnselectActive == true) clearSelection();
+		
+		if(mouseH.buttonSwapActive == true) swapping();
+		
 		if(playerTurn == true) {
 			
-			selectCard();
-
 			if(mouseH.buttonPlayActive == true) playCards();
-			
-			if(mouseH.buttonUnselectActive == true) clearSelection();
-			
-			if(mouseH.buttonSwapActive == true) swapping();
 			
 			if(mouseH.buttonPassActive == true) passTurn();
 			
